@@ -1,47 +1,46 @@
 function setup() {
   createCanvas(400, 400);
-  noLoop(); // Prevent continuous redrawing
 }
 
 function draw() {
-  background(135, 206, 250); // Sky blue
+  background(135, 206, 250); //Color blue
 
-  // Draw the grass covering half the canvas (from y = 200 to the bottom)
+  //Grass
   drawGrass();
 
-  // Draw the castle on the grass
+  //Castle
   drawCastle(200, 150);
 }
 
-// Function to draw the grass
+//Drawing half the canvas grass
 function drawGrass() {
-  fill(34, 139, 34); // Grass green
+  fill(34, 139, 34); //Color green
   noStroke();
-  rect(0, height / 2, width, height / 2); // Grass at the bottom half of the canvas
+  rect(0, height / 2, width, height / 2);
 }
 
-// Function to draw the castle
+//Drawing the castle
 function drawCastle(x, y) {
-  // Castle body (main structure) positioned above the grass
-  fill(169, 169, 169); // Gray for the castle walls
-  rect(x - 75, y, 150, 100); // Main rectangular part of the castle (above the grass)
+  //The castles main building
+  fill(169, 169, 169); //Color gray
+  rect(x - 75, y, 150, 100);
 
-  // Castle towers (with triangular roofs) positioned next to the main body and increased height
-  fill(169, 169, 169); // Gray for the towers
-  rect(x - 115, y + 100 - 105, 40, 105); // Left tower with bottom aligned with the bottom of the main body
-  rect(x + 75, y + 100 - 105, 40, 105); // Right tower with bottom aligned with the bottom of the main body
+  //The towers of the castle
+  fill(169, 169, 169); //Color gray
+  rect(x - 115, y + 100 - 105, 40, 105);
+  rect(x + 75, y + 100 - 105, 40, 105);
+  
+  //Triangle roof for the towers
+  fill(139, 69, 19); //Color brown
+  triangle(x - 115, y + 100 - 105, x - 115 + 20, y + 100 - 105 - 50, x - 115 + 40, y + 100 - 105); //Left
+  triangle(x + 75, y + 100 - 105, x + 75 + 20, y + 100 - 105 - 50, x + 75 + 40, y + 100 - 105); //Right
 
-  // Triangular roofs for the towers (centered on the towers)
-  fill(139, 69, 19); // Brown for the roofs
-  triangle(x - 115, y + 100 - 105, x - 115 + 20, y + 100 - 105 - 50, x - 115 + 40, y + 100 - 105); // Left tower roof
-  triangle(x + 75, y + 100 - 105, x + 75 + 20, y + 100 - 105 - 50, x + 75 + 40, y + 100 - 105); // Right tower roof
+  //The door for the castle
+  fill(139, 69, 19); //Color brown
+  rect(x - 20, y + 50, 40, 50); //Door position
 
-  // Draw the castle door (on the main body)
-  fill(139, 69, 19); // Brown for the door
-  rect(x - 20, y + 50, 40, 50); // Door in the middle of the castle
-
-  // Draw windows on the castle (black windows)
-  fill(0); // Black for windows
-  rect(x - 55, y + 25, 20, 20); // Left window
-  rect(x + 35, y + 25, 20, 20); // Right window
+  //Windows for the castle
+  fill(0); //Color black
+  rect(x - 55, y + 25, 20, 20); //Left
+  rect(x + 35, y + 25, 20, 20); //Right
 }
